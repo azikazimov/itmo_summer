@@ -13,6 +13,10 @@ def grafOfMove(v0, a, t):
     seconds = np.linspace(0, t, maxSeconds)
     s = [(v0 * t + (a * (sec**2)) / 2) for sec in seconds]
     plt.plot(seconds, s)
-    plt.show()
+
+    ax = plt.gca()
+    ax.spines['bottom'].set_position('center')
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
 
 grafOfMove(24, 1, 12) # указать в порядке : v0, a, t
