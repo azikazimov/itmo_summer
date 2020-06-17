@@ -1,13 +1,13 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-a = np.loadtxt('main.txt', skiprows=3, usecols=(0, 1, 2, 3))
+
 
 areaMeasurementAccuracy = 5 # здесь указать точность измерения площади. Если до 3-его знака, то указать 5
 filename = 'main.txt' # здесь указать имя файла
+a = np.loadtxt(filename, skiprows=3, usecols=(0, 1, 2, 3))
 f = open(filename, 'r')
 text = f.read()
-print(text.find('S=')) #56
 s = text[text.find('S=') + 2: text.find('S=') + 2 + areaMeasurementAccuracy] # выделяем площадь солнца. Костыль, но работает
 
 listWt = []
